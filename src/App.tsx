@@ -1,9 +1,12 @@
+// src/App.tsx
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from '@/pages/LoginPage';
 import HomePage from '@/pages/HomePage';
 import { ProtectedRoute } from '@/routes/ProtectedRoute';
 import { GuestRoute } from '@/routes/GuestRoute';
+import MainLayout from '@/layouts/MainLayout';
+import MyProfilePage from '@/pages/MyProfilePage';
 
 const App: React.FC = () => {
   return (
@@ -19,15 +22,18 @@ const App: React.FC = () => {
           }
         />
 
-        {/* CHỈ CHO USER ĐÃ LOGIN VÀO / */}
+        {/* LAYOUT CHÍNH: bọc bởi ProtectedRoute + MainLayout */}
         <Route
-          path="/"
           element={
             <ProtectedRoute>
-              <HomePage />
+              <MainLayout />
             </ProtectedRoute>
           }
-        />
+        >
+          {/* Các route “ở trong” layout */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/my-profile" element={<MyProfilePage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

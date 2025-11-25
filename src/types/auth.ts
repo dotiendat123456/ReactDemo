@@ -4,7 +4,6 @@ export type LoginPayload = {
   password: string;
 };
 
-// tuỳ API của bạn, tạm để generic
 export type LoginResponse = {
   message?: string;
   token?: string;

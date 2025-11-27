@@ -49,16 +49,10 @@ const HomePage: React.FC = () => {
             path: '/my-profile',
         },
         {
-            key: 'employees',
-            title: 'Quản lý nhân viên',
-            description: 'Xem danh sách nhân viên, vai trò, phòng ban, trạng thái làm việc.',
-            path: '/employees',
-        },
-        {
-            key: 'reports',
-            title: 'Báo cáo & thống kê',
-            description: 'Xem các báo cáo tổng hợp, KPI, lịch sử đăng nhập, dữ liệu hệ thống.',
-            path: '/reports',
+            key: 'posts',
+            title: 'Danh sách bài viết',
+            description: 'Xem danh sách các bài viết đã được đăng.',
+            path: '/posts',
         },
     ];
 

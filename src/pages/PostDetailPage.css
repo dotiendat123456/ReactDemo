@@ -1,0 +1,86 @@
+/* src/pages/PostDetailPage.css */
+
+/* Định dạng chung cho trang chi tiết bài viết */
+.post-detail {
+    background-color: #fff;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Tiêu đề bài viết */
+.post-detail h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Định dạng cho ngày tháng tạo bài viết */
+.post-detail p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+/* Định dạng cho phần hình ảnh bài viết */
+.post-detail .post-file {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+/* Định dạng cho phần thông tin người dùng */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Avatar của người dùng */
+.user-info .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+/* Tên người dùng */
+.user-info h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Phần tạo khung cho bài viết đẹp mắt */
+.post-detail .content {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-top: 20px;
+}
+
+/* Trạng thái bài viết - Thêm lớp trạng thái cho bài viết (chờ duyệt, đã duyệt) */
+.status-badge {
+    padding: 8px 12px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.status-badge.warning {
+    background-color: #f0ad4e;
+}
+
+.status-badge.success {
+    background-color: #5bc0de;
+}

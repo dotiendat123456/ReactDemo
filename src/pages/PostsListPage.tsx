@@ -7,7 +7,7 @@ import type { Post } from '@/types/post';
 import './PostsListPage.css';
 
 const PostsListPage: React.FC = () => {
-  const navigate = useNavigate(); // Sử dụng hook navigate để điều hướng
+  const navigate = useNavigate();
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -42,28 +42,39 @@ const PostsListPage: React.FC = () => {
     }
   };
 
-  // Điều hướng đến trang chi tiết của bài viết
   const handlePostClick = (id: number) => {
-    navigate(`/posts/${id}`); // Điều hướng đến URL của bài viết chi tiết
+    navigate(`/posts/${id}`);
   };
 
   if (loading) return <div className="loading">Loading...</div>;
   if (error) return <div className="error">{error}</div>;
 
   return (
-    <div className="posts-list">
-      {posts.map((post) => (
-        <PostCard
-          key={post.id}
-          id={post.id}
-          content={post.content}
-          user={post.user}
-          created_at={post.created_at}
-          file_upload={post.file_upload}
-          file_uploads={post.file_uploads}
-          onClick={() => handlePostClick(post.id)} // Gọi handlePostClick khi nhấn vào bài viết
-        />
-      ))}
+    <div className="posts-list-page">
+      <div className="posts-list-header">
+        <button
+          type="button"
+          className="btn-create-post"
+          onClick={() => navigate('/posts/create')}
+        >
+          + Tạo bài viết mới
+        </button>
+      </div>
+
+      <div className="posts-list">
+        {posts.map((post) => (
+          <PostCard
+            key={post.id}
+            id={post.id}
+            content={post.content}
+            user={post.user}
+            created_at={post.created_at}
+            file_upload={post.file_upload}
+            file_uploads={post.file_uploads}
+            onClick={() => handlePostClick(post.id)}
+          />
+        ))}
+      </div>
 
       <div className="pagination">
         <button onClick={goToPrevPage} disabled={currentPage === 1}>

@@ -1,5 +1,36 @@
 // src/types/post.ts
 
+export interface CommentUser {
+    id: number;
+    name: string;
+    first_name?: string;
+    last_name?: string;
+    email: string;
+    status: number;
+    status_name: string;
+    badge_name: string;
+    avatar_url: string;
+}
+
+export interface Comment {
+    id: number;
+    content: string;
+    user: CommentUser;
+    parent: number | null;
+    created_at?: string;
+    emotes_count?: number;
+}
+
+export interface AddCommentPayload {
+    content: string;
+    parent?: number | null;
+}
+
+export interface AddCommentResponse {
+    message: string;
+    data: Post[];
+}
+
 export interface Post {
     id: number;
     content: string;
@@ -14,6 +45,7 @@ export interface Post {
     status_name: string;
     file_upload: string;
     file_uploads: FileUpload[];
+    comments?: Comment[];
 }
 
 export interface FileUpload {
@@ -33,3 +65,11 @@ export interface PostResponse {
         total: number;
     };
 }
+
+export interface CreatePostPayload {
+    content: string;
+    survey_id?: number | null;
+    fileUpload?: string[] | null;
+}
+
+

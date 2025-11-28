@@ -1,0 +1,28 @@
+.post-create {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.post-create-form .form-group {
+  margin-bottom: 16px;
+}
+
+.post-create-form label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.post-create-form input,
+.post-create-form textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.post-create-form .error {
+  color: #ef4444;
+  margin-bottom: 8px;
+}

@@ -9,6 +9,7 @@ import MainLayout from '@/layouts/MainLayout';
 import MyProfilePage from '@/pages/MyProfilePage';
 import PostsListPage from '@/pages/PostsListPage';
 import PostDetailPage from '@/pages/PostDetailPage';
+import PostCreatePage from '@/pages/PostCreatePage';
 
 const App: React.FC = () => {
   return (
@@ -37,6 +38,7 @@ const App: React.FC = () => {
           <Route path="/my-profile" element={<MyProfilePage />} />
           <Route path="/posts" element={<PostsListPage />} />
           <Route path="/posts/:id" element={<PostDetailPage />} />
+          <Route path="/posts/create" element={<PostCreatePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

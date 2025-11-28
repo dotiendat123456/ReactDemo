@@ -1,53 +1,46 @@
-/* Định nghĩa chung cho layout */
 .main-layout {
   min-height: 100vh;
-  background: #020617; /* Màu nền tối cho toàn bộ trang */
-  color: #e5e7eb; /* Màu chữ sáng */
+  background: #020617;
+  color: #e5e7eb;
   display: flex;
   flex-direction: column;
 }
 
-/* main area */
 .main-layout__content {
   flex: 1;
   padding: 16px;
 }
 
-/* Đảm bảo container có giới hạn chiều rộng */
 .main-layout__container {
   max-width: 1120px;
   margin: 0 auto;
 }
 
-/* Đảm bảo các PostCard được hiển thị trên một hàng */
 .posts-list {
   display: flex;
-  flex-wrap: wrap; /* Cho phép gói các thẻ nếu không đủ không gian */
-  gap: 20px; /* Khoảng cách giữa các bài viết */
-  justify-content: space-between; /* Giúp căn giữa các PostCard */
-  margin: 0 auto; /* Căn giữa toàn bộ vùng chứa */
-  padding: 20px 0; /* Thêm padding trên dưới */
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
-/* Đảm bảo mỗi PostCard chiếm 1/3 chiều rộng màn hình */
 .post-card {
-  background-color: #fff; /* Màu nền trắng cho bài viết */
+  background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: calc(33.33% - 20px); /* 3 bài viết trên 1 hàng */
+  width: calc(33.33% - 20px);
   box-sizing: border-box;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
-/* Đảm bảo không bị bóp méo và vẫn đẹp mắt khi hover */
 .post-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Định dạng header bài viết (avatar + tên + ngày tạo) */
 .post-card-header {
   display: flex;
   align-items: center;
@@ -62,7 +55,6 @@
   border: 2px solid #ddd;
 }
 
-/* Định dạng tên người dùng và ngày tạo */
 .post-card-header h3 {
   font-size: 16px;
   font-weight: bold;
@@ -74,22 +66,20 @@
   color: #888;
 }
 
-/* Định dạng nội dung bài viết */
 .content {
   font-size: 16px;
   line-height: 1.6;
   color: #444;
-  font-weight: bold; /* Làm chữ đậm hơn */
+  font-weight: bold;
   margin-bottom: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Định dạng ảnh bài viết */
 .post-file {
   width: 100%;
-  height: 250px; /* Giới hạn chiều cao ảnh */
-  object-fit: cover; /* Đảm bảo ảnh không bị bóp méo */
+  height: 250px;
+  object-fit: cover;
   border-radius: 10px;
   margin-top: 15px;
 }

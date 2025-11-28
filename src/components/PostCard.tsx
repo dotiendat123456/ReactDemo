@@ -1,7 +1,7 @@
 // src/components/PostCard.tsx
 import React from 'react';
 
-const BASE_URL = 'https://khgc-system.khgc.dev'; // Đảm bảo đây là URL gốc chính xác của bạn
+const BASE_URL = 'https://khgc-system.khgc.dev';
 
 type PostCardProps = {
   id: number;
@@ -13,7 +13,7 @@ type PostCardProps = {
   created_at: string;
   file_upload: string;
   file_uploads: any;
-  onClick: () => void; // Sự kiện nhấn vào bài viết
+  onClick: () => void;
 };
 
 const PostCard: React.FC<PostCardProps> = ({
@@ -26,7 +26,7 @@ const PostCard: React.FC<PostCardProps> = ({
   onClick,
 }) => {
   // Kiểm tra và tạo đường dẫn URL đầy đủ cho file ảnh
-  const postImageUrl = file_upload ? BASE_URL + file_upload : null; // Tạo URL đầy đủ cho ảnh bài viết
+  const postImageUrl = file_upload ? BASE_URL + file_upload : null;
 
   return (
     <div className="post-card" onClick={onClick}>
@@ -36,7 +36,7 @@ const PostCard: React.FC<PostCardProps> = ({
         <p>{new Date(created_at).toLocaleDateString()}</p>
       </div>
       <p className="content">{content}</p>
-      {postImageUrl && <img className="post-file" src={postImageUrl} alt="Post file" />} {/* Hiển thị ảnh bài viết */}
+      {postImageUrl && <img className="post-file" src={postImageUrl} alt="Post file" />}
     </div>
   );
 };

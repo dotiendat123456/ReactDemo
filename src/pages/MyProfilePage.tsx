@@ -22,7 +22,7 @@ const MyProfilePage: React.FC = () => {
     const [bgPreview, setBgPreview] = useState<string | null>(null);
     const [savingBg, setSavingBg] = useState(false);
 
-    // ================== LOAD PROFILE LẦN ĐẦU ==================
+    // load profile lần đầu
     useEffect(() => {
         const init = async () => {
             try {
@@ -63,7 +63,7 @@ const MyProfilePage: React.FC = () => {
         }
     };
 
-    // ================== AVATAR HANDLERS ==================
+    // bật mode edit avatar
     const handleStartEditAvatar = () => {
         setIsEditingAvatar(true);
         setAvatarPreview(user?.avatar_url ?? null);
@@ -114,7 +114,7 @@ const MyProfilePage: React.FC = () => {
         }
     };
 
-    // ================== BACKGROUND HANDLERS ==================
+    // bật mode edit background
     const handleStartEditBg = () => {
         setIsEditingBg(true);
         setBgPreview(user?.background ?? null);
@@ -165,7 +165,7 @@ const MyProfilePage: React.FC = () => {
         }
     };
 
-    // ================== RENDER GUARDS ==================
+    // bảo vệ render
     if (loading && !user) {
         return (
             <div className="myprofile-page">
@@ -209,7 +209,7 @@ const MyProfilePage: React.FC = () => {
 
             {error && <p className="myprofile-error">{error}</p>}
 
-            {/* ===== HERO: background + avatar + nút đổi avatar ===== */}
+            {/*  HERO: background + avatar + nút đổi avatar  */}
             <section className="myprofile-hero">
                 {currentBg && (
                     <div
@@ -311,7 +311,7 @@ const MyProfilePage: React.FC = () => {
                 </div>
             </section>
 
-            {/* ===== 2 cột bên dưới ===== */}
+            {/*  2 cột bên dưới  */}
             <div className="myprofile-layout">
                 {/* Cột trái: info cơ bản (không còn nút đổi avatar ở đây) */}
                 <section className="myprofile-left">

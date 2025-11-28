@@ -51,8 +51,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             localStorage.setItem('authUser', JSON.stringify(profile));
         } catch (err) {
             console.error('Fetch profile failed', err);
-            // token hỏng / hết hạn → có thể logout luôn
-            // logout();
         }
     };
 
